@@ -57,7 +57,6 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 @interface AVCamCameraViewController () <AVCaptureFileOutputRecordingDelegate>
 
 // Session management.
-@property (nonatomic, weak) IBOutlet AVCamPreviewView *previewView;
 @property (nonatomic, weak) IBOutlet UISegmentedControl *captureModeControl;
 
 @property (nonatomic) AVCamSetupResult setupResult;

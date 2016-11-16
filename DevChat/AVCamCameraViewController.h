@@ -7,7 +7,10 @@
 */
 
 @import UIKit;
+@class AVCamPreviewView;
 
 @interface AVCamCameraViewController : UIViewController
+@property (nonatomic, weak) AVCamPreviewView *previewView;
+
 
 @end
