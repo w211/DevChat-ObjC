@@ -20,7 +20,16 @@ class CameraVC: AVCamCameraViewController {
         super.viewDidLoad()
     }
 
-  
+    @IBAction func recordBtnPressed(_ sender: Any) {
+        toggleMovieRecording()
+    
+    }
+    
+    @IBAction func changeCameraBtnPressed(_ sender: Any) {
+        changeCamera()
+
+    }
+    
 
 }
 

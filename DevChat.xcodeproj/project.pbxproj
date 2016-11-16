@@ -64,8 +64,8 @@
 		D82EA3181DD91BAC00F07762 /* DevChat */ = {
 			isa = PBXGroup;
 			children = (
-				D82EA32C1DD91BE900F07762 /* View */,
 				D82EA32B1DD91BE600F07762 /* Controller */,
+				D82EA32C1DD91BE900F07762 /* View */,
 				D82EA32D1DD91BF800F07762 /* Delegate */,
 				D82EA31D1DD91BAC00F07762 /* Main.storyboard */,
 				D82EA3201DD91BAC00F07762 /* Assets.xcassets */,
@@ -79,9 +79,9 @@
 		D82EA32B1DD91BE600F07762 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D82EA31B1DD91BAC00F07762 /* CameraVC.swift */,
 				D82EA3311DD91C3700F07762 /* AVCamCameraViewController.h */,
 				D82EA3321DD91C3700F07762 /* AVCamCameraViewController.m */,
+				D82EA31B1DD91BAC00F07762 /* CameraVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -352,6 +352,7 @@
 				D82EA32A1DD91BAC00F07762 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

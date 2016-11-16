@@ -45,5 +45,7 @@
 	<string>Allow Camera Usage?</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Allow Microphone?</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow Library</string>
 </dict>
 </plist>

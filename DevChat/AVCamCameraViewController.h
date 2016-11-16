@@ -11,6 +11,9 @@
 
 @interface AVCamCameraViewController : UIViewController
 @property (nonatomic, weak) AVCamPreviewView *previewView;
+- (void)changeCamera;
+- (void)toggleMovieRecording;
+
 
 
 @end
