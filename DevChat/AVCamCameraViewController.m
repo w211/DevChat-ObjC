@@ -12,6 +12,7 @@
 #import "AVCamCameraViewController.h"
 #import "AVCamPreviewView.h"
 #import "AVCamPhotoCaptureDelegate.h"
+#import "AAPLCameraVCDelegate.h"
 
 static void * SessionRunningContext = &SessionRunningContext;
 
@@ -66,7 +67,7 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 @property (nonatomic) AVCaptureDeviceInput *videoDeviceInput;
 
 // Device configuration.
-@property (nonatomic, weak) IBOutlet UIButton *cameraButton;
+//@property (nonatomic, weak) IBOutlet UIButton *cameraButton;
 @property (nonatomic, weak) IBOutlet UILabel *cameraUnavailableLabel;
 @property (nonatomic) AVCaptureDeviceDiscoverySession *videoDeviceDiscoverySession;
 
@@ -81,7 +82,7 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 @property (nonatomic) NSInteger inProgressLivePhotoCapturesCount;
 
 // Recording movies.
-@property (nonatomic, weak) IBOutlet UIButton *recordButton;
+//@property (nonatomic, weak) IBOutlet UIButton *recordButton;
 @property (nonatomic, weak) IBOutlet UIButton *resumeButton;
 
 @property (nonatomic, strong) AVCaptureMovieFileOutput *movieFileOutput;
@@ -98,8 +99,14 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 	[super viewDidLoad];
 	
 	// Disable UI. The UI is enabled if and only if the session starts running.
-	self.cameraButton.enabled = NO;
-	self.recordButton.enabled = NO;
+    
+    
+    //[self.delegate shouldEnableControls:NO];
+    [self.delegate shouldEnableRecordUI:NO];
+    [self.delegate shouldEnableCameraUI:NO];
+    
+	//self.cameraButton.enabled = NO;
+	//self.recordButton.enabled = NO;
 	self.photoButton.enabled = NO;
 	self.livePhotoModeButton.enabled = NO;
 	self.captureModeControl.enabled = NO;
@@ -393,7 +400,9 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 - (IBAction)toggleCaptureMode:(UISegmentedControl *)captureModeControl
 {
 	if ( captureModeControl.selectedSegmentIndex == AVCamCaptureModePhoto ) {
-		self.recordButton.enabled = NO;
+		
+        [self.delegate shouldEnableRecordUI:NO];
+        //self.recordButton.enabled = NO;
 		
 		dispatch_async( self.sessionQueue, ^{
 			/*
@@ -438,7 +447,9 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 				self.movieFileOutput = movieFileOutput;
 				
 				dispatch_async( dispatch_get_main_queue(), ^{
-					self.recordButton.enabled = YES;
+                    
+                    [self.delegate shouldEnableRecordUI:YES];
+                    //self.recordButton.enabled = YES;
 				} );
 			}
 		} );
@@ -449,8 +460,12 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 
  - (void)changeCamera
 {
-	self.cameraButton.enabled = NO;
-	self.recordButton.enabled = NO;
+    //[self.delegate shouldEnableControls:NO];
+    [self.delegate shouldEnableRecordUI:NO];
+    [self.delegate shouldEnableCameraUI:NO];
+    
+	//self.cameraButton.enabled = NO;
+	//self.recordButton.enabled = NO;
 	self.photoButton.enabled = NO;
 	self.livePhotoModeButton.enabled = NO;
 	self.captureModeControl.enabled = NO;
@@ -533,8 +548,12 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 		}
 		
 		dispatch_async( dispatch_get_main_queue(), ^{
-			self.cameraButton.enabled = YES;
-			self.recordButton.enabled = self.captureModeControl.selectedSegmentIndex == AVCamCaptureModeMovie;
+			
+            [self.delegate shouldEnableCameraUI:YES];
+            [self.delegate shouldEnableRecordUI:self.captureModeControl.selectedSegmentIndex == AVCamCaptureModeMovie];
+            
+            //self.cameraButton.enabled = YES;
+			//self.recordButton.enabled = self.captureModeControl.selectedSegmentIndex == AVCamCaptureModeMovie;
 			self.photoButton.enabled = YES;
 			self.livePhotoModeButton.enabled = YES;
 			self.captureModeControl.enabled = YES;
@@ -686,8 +705,13 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 		
 		See the AVCaptureFileOutputRecordingDelegate methods.
 	 */
-	self.cameraButton.enabled = NO;
-	self.recordButton.enabled = NO;
+    
+    [self.delegate shouldEnableCameraUI:NO];
+    [self.delegate shouldEnableRecordUI:NO];
+
+    
+	//self.cameraButton.enabled = NO;
+	//self.recordButton.enabled = NO;
 	self.captureModeControl.enabled = NO;
 	
 	/*
@@ -730,8 +754,13 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 {
 	// Enable the Record button to let the user stop the recording.
 	dispatch_async( dispatch_get_main_queue(), ^{
-		self.recordButton.enabled = YES;
-		[self.recordButton setTitle:NSLocalizedString( @"Stop", @"Recording button stop title" ) forState:UIControlStateNormal];
+		
+        [self.delegate shouldEnableRecordUI:YES];
+        [self.delegate shouldEnableCameraUI:YES];
+        [self.delegate recordingHasStarted];
+        
+        //self.recordButton.enabled = YES;
+        //[self.recordButton setTitle:NSLocalizedString( @"Stop", @"Recording button stop title" ) forState:UIControlStateNormal];
 	});
 }
 
@@ -795,10 +824,15 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 	// Enable the Camera and Record buttons to let the user switch camera and start another recording.
 	dispatch_async( dispatch_get_main_queue(), ^{
 		// Only enable the ability to change camera if the device has more than one camera.
-		self.cameraButton.enabled = ( self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1 );
-		self.recordButton.enabled = YES;
+		
+        [self.delegate shouldEnableCameraUI: self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1 ];
+        [self.delegate shouldEnableRecordUI:YES];
+        [self.delegate canStartRecording];
+        
+        //self.cameraButton.enabled = ( self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1 );
+		//self.recordButton.enabled = YES;
 		self.captureModeControl.enabled = YES;
-		[self.recordButton setTitle:NSLocalizedString( @"Record", @"Recording button record title" ) forState:UIControlStateNormal];
+		//[self.recordButton setTitle:NSLocalizedString( @"Record", @"Recording button record title" ) forState:UIControlStateNormal];
 	});
 }
 
@@ -838,8 +872,12 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 		
 		dispatch_async( dispatch_get_main_queue(), ^{
 			// Only enable the ability to change camera if the device has more than one camera.
-			self.cameraButton.enabled = isSessionRunning && ( self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1 );
-			self.recordButton.enabled = isSessionRunning && ( self.captureModeControl.selectedSegmentIndex == AVCamCaptureModeMovie );
+			
+             [self.delegate shouldEnableCameraUI: isSessionRunning && ( self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1 )];
+             [self.delegate shouldEnableRecordUI:isSessionRunning && ( self.captureModeControl.selectedSegmentIndex == AVCamCaptureModeMovie )];
+            
+            //self.cameraButton.enabled = isSessionRunning && ( self.videoDeviceDiscoverySession.uniqueDevicePositionsCount > 1 );
+			//self.recordButton.enabled = isSessionRunning && ( self.captureModeControl.selectedSegmentIndex == AVCamCaptureModeMovie );
 			self.photoButton.enabled = isSessionRunning;
 			self.captureModeControl.enabled = isSessionRunning;
 			self.livePhotoModeButton.enabled = isSessionRunning && livePhotoCaptureEnabled;

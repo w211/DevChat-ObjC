@@ -15,7 +15,6 @@
 		D82EA3351DD91C3700F07762 /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = D82EA3301DD91C3700F07762 /* AVCamPreviewView.m */; };
 		D82EA3361DD91C3700F07762 /* AVCamCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82EA3321DD91C3700F07762 /* AVCamCameraViewController.m */; };
 		D82EA3371DD91C3700F07762 /* AVCamPhotoCaptureDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D82EA3341DD91C3700F07762 /* AVCamPhotoCaptureDelegate.m */; };
-		EAE0326F1DDD3273004C7459 /* AAPLCameraVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE0326E1DDD3273004C7459 /* AAPLCameraVCDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,7 @@
 		D82EA3321DD91C3700F07762 /* AVCamCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamCameraViewController.m; sourceTree = "<group>"; };
 		D82EA3331DD91C3700F07762 /* AVCamPhotoCaptureDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPhotoCaptureDelegate.h; sourceTree = "<group>"; };
 		D82EA3341DD91C3700F07762 /* AVCamPhotoCaptureDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPhotoCaptureDelegate.m; sourceTree = "<group>"; };
-		EAE0326E1DDD3273004C7459 /* AAPLCameraVCDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AAPLCameraVCDelegate.swift; sourceTree = "<group>"; };
+		D8F07FF61DDD783B00B540F8 /* AAPLCameraVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraVCDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +110,7 @@
 		EAE0326D1DDD3200004C7459 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				EAE0326E1DDD3273004C7459 /* AAPLCameraVCDelegate.swift */,
+				D8F07FF61DDD783B00B540F8 /* AAPLCameraVCDelegate.h */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -194,7 +193,6 @@
 				D82EA31C1DD91BAC00F07762 /* CameraVC.swift in Sources */,
 				D82EA31A1DD91BAC00F07762 /* AppDelegate.swift in Sources */,
 				D82EA3361DD91C3700F07762 /* AVCamCameraViewController.m in Sources */,
-				EAE0326F1DDD3273004C7459 /* AAPLCameraVCDelegate.swift in Sources */,
 				D82EA3351DD91C3700F07762 /* AVCamPreviewView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
