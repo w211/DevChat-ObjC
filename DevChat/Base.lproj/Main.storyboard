@@ -71,9 +71,74 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="6xj-We-4El">
+            <objects>
+                <viewController id="Qju-XL-92z" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N3I-5S-T21"/>
+                        <viewControllerLayoutGuide type="bottom" id="9hV-oi-WgV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="07M-ea-YfK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopes" translatesAutoresizingMaskIntoConstraints="NO" id="kP9-Uf-6Cx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhY-s2-1CA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.5568627451" green="0.85882352939999995" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dh1-3H-91Q">
+                                <rect key="frame" x="64" y="125" width="246" height="64"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="devslopes-mountains-white" translatesAutoresizingMaskIntoConstraints="NO" id="z9l-3V-H2u">
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="64"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="64" id="9KL-r8-le9"/>
+                                            <constraint firstAttribute="width" constant="116" id="Gaf-6d-edr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="devchat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loU-AD-4Ky">
+                                        <rect key="frame" x="116" y="0.0" width="130" height="64"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Enter Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ryU-K5-4Yh">
+                                <rect key="frame" x="55" y="312" width="265" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kP9-Uf-6Cx" secondAttribute="trailing" id="8Cd-qK-wKV"/>
+                            <constraint firstItem="ZhY-s2-1CA" firstAttribute="top" secondItem="07M-ea-YfK" secondAttribute="top" id="8Yn-lZ-9gr"/>
+                            <constraint firstItem="9hV-oi-WgV" firstAttribute="top" secondItem="kP9-Uf-6Cx" secondAttribute="bottom" id="NRW-oC-uCS"/>
+                            <constraint firstItem="kP9-Uf-6Cx" firstAttribute="top" secondItem="07M-ea-YfK" secondAttribute="top" id="Rj2-Ga-70r"/>
+                            <constraint firstItem="9hV-oi-WgV" firstAttribute="top" secondItem="ZhY-s2-1CA" secondAttribute="bottom" id="SHm-Dq-8I9"/>
+                            <constraint firstItem="kP9-Uf-6Cx" firstAttribute="leading" secondItem="07M-ea-YfK" secondAttribute="leading" id="Yy1-bW-8jp"/>
+                            <constraint firstItem="dh1-3H-91Q" firstAttribute="centerX" secondItem="07M-ea-YfK" secondAttribute="centerX" id="gjE-RH-U7e"/>
+                            <constraint firstItem="ZhY-s2-1CA" firstAttribute="leading" secondItem="07M-ea-YfK" secondAttribute="leading" id="w1G-R3-Sbd"/>
+                            <constraint firstAttribute="trailing" secondItem="ZhY-s2-1CA" secondAttribute="trailing" id="x67-KG-Q6m"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L6a-yA-jm4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="722.39999999999998" y="36.431784107946029"/>
+        </scene>
     </scenes>
     <resources>
         <image name="camera_icon_snap" width="29" height="24"/>
         <image name="createsnap_btn" width="30" height="30"/>
+        <image name="devslopes" width="1080" height="1349"/>
+        <image name="devslopes-mountains-white" width="451" height="335"/>
     </resources>
 </document>
