@@ -65,16 +65,17 @@
                         <outlet property="camPreviewView" destination="3AW-Gm-hzk" id="Wuz-ST-blD"/>
                         <outlet property="cameraBtn" destination="vZh-zB-Fy1" id="U6Y-U6-cI9"/>
                         <outlet property="recordBtn" destination="evJ-IP-qzF" id="Hib-UJ-noW"/>
+                        <segue destination="Qju-XL-92z" kind="presentation" identifier="LoginVC" id="D8q-sv-g2K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="6xj-We-4El">
             <objects>
-                <viewController id="Qju-XL-92z" sceneMemberID="viewController">
+                <viewController id="Qju-XL-92z" customClass="LoginVC" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N3I-5S-T21"/>
                         <viewControllerLayoutGuide type="bottom" id="9hV-oi-WgV"/>
@@ -86,6 +87,10 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="devslopes" translatesAutoresizingMaskIntoConstraints="NO" id="kP9-Uf-6Cx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhY-s2-1CA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.5568627451" green="0.85882352939999995" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dh1-3H-91Q">
                                 <rect key="frame" x="64" y="125" width="246" height="64"/>
                                 <subviews>
@@ -177,11 +182,10 @@
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginPressed:" destination="Qju-XL-92z" eventType="touchUpInside" id="zeL-nA-NIn"/>
+                                </connections>
                             </button>
-                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZhY-s2-1CA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.5568627451" green="0.85882352939999995" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -204,6 +208,10 @@
                             <constraint firstAttribute="trailing" secondItem="ZhY-s2-1CA" secondAttribute="trailing" id="x67-KG-Q6m"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="ryU-K5-4Yh" id="oNj-VE-mOk"/>
+                        <outlet property="passwordField" destination="2DR-Hx-3tV" id="mFh-Ss-jDf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6a-yA-jm4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

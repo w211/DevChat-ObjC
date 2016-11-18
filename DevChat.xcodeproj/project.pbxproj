@@ -16,6 +16,8 @@
 		D82EA3351DD91C3700F07762 /* AVCamPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = D82EA3301DD91C3700F07762 /* AVCamPreviewView.m */; };
 		D82EA3361DD91C3700F07762 /* AVCamCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D82EA3321DD91C3700F07762 /* AVCamCameraViewController.m */; };
 		D82EA3371DD91C3700F07762 /* AVCamPhotoCaptureDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D82EA3341DD91C3700F07762 /* AVCamPhotoCaptureDelegate.m */; };
+		D835ABA41DDFAC2500E5B85F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835ABA31DDFAC2500E5B85F /* LoginVC.swift */; };
+		D835ABA71DDFAFD500E5B85F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835ABA61DDFAFD500E5B85F /* AuthService.swift */; };
 		D841513B1DDE8A2800F1FB08 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D841513A1DDE8A2800F1FB08 /* RoundedButton.swift */; };
 		D8ED3BAF1DDE3A6C001C2D0F /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED3BAE1DDE3A6C001C2D0F /* RoundTextField.swift */; };
 		D8F07FF81DDD8E1000B540F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8F07FF71DDD8E1000B540F8 /* GoogleService-Info.plist */; };
@@ -39,6 +41,8 @@
 		D82EA3321DD91C3700F07762 /* AVCamCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamCameraViewController.m; sourceTree = "<group>"; };
 		D82EA3331DD91C3700F07762 /* AVCamPhotoCaptureDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamPhotoCaptureDelegate.h; sourceTree = "<group>"; };
 		D82EA3341DD91C3700F07762 /* AVCamPhotoCaptureDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamPhotoCaptureDelegate.m; sourceTree = "<group>"; };
+		D835ABA31DDFAC2500E5B85F /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		D835ABA61DDFAFD500E5B85F /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D841513A1DDE8A2800F1FB08 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		D8ED3BAE1DDE3A6C001C2D0F /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		D8F07FF61DDD783B00B540F8 /* AAPLCameraVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraVCDelegate.h; sourceTree = "<group>"; };
@@ -95,6 +99,7 @@
 		D82EA3181DD91BAC00F07762 /* DevChat */ = {
 			isa = PBXGroup;
 			children = (
+				D835ABA51DDFAFC800E5B85F /* Services */,
 				EAE0326D1DDD3200004C7459 /* Protocols */,
 				D82EA32B1DD91BE600F07762 /* Controller */,
 				D82EA32C1DD91BE900F07762 /* View */,
@@ -115,6 +120,7 @@
 				D82EA3311DD91C3700F07762 /* AVCamCameraViewController.h */,
 				D82EA3321DD91C3700F07762 /* AVCamCameraViewController.m */,
 				D82EA31B1DD91BAC00F07762 /* CameraVC.swift */,
+				D835ABA31DDFAC2500E5B85F /* LoginVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -138,6 +144,14 @@
 				D82EA3341DD91C3700F07762 /* AVCamPhotoCaptureDelegate.m */,
 			);
 			name = Delegate;
+			sourceTree = "<group>";
+		};
+		D835ABA51DDFAFC800E5B85F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D835ABA61DDFAFD500E5B85F /* AuthService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		EAE0326D1DDD3200004C7459 /* Protocols */ = {
@@ -276,6 +290,8 @@
 			files = (
 				D82EA3371DD91C3700F07762 /* AVCamPhotoCaptureDelegate.m in Sources */,
 				D82EA31C1DD91BAC00F07762 /* CameraVC.swift in Sources */,
+				D835ABA41DDFAC2500E5B85F /* LoginVC.swift in Sources */,
+				D835ABA71DDFAFD500E5B85F /* AuthService.swift in Sources */,
 				D82EA31A1DD91BAC00F07762 /* AppDelegate.swift in Sources */,
 				D82EA3361DD91C3700F07762 /* AVCamCameraViewController.m in Sources */,
 				D841513B1DDE8A2800F1FB08 /* RoundedButton.swift in Sources */,
