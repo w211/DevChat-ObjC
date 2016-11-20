@@ -121,7 +121,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" keyboardAppearance="alert"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -145,7 +145,7 @@
                                 </constraints>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="20"/>
@@ -162,7 +162,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBj-Pb-z5o" customClass="RoundedButton" customModule="DevChat" customModuleProvider="target">
-                                <rect key="frame" x="55.5" y="361" width="265" height="42"/>
+                                <rect key="frame" x="55.5" y="195" width="265" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="265" id="GKv-hA-cFd"/>
                                     <constraint firstAttribute="height" constant="42" id="uw0-ta-TYL"/>
@@ -189,7 +189,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tBj-Pb-z5o" firstAttribute="top" secondItem="2DR-Hx-3tV" secondAttribute="bottom" constant="20" id="1jP-ZJ-IfF"/>
+                            <constraint firstItem="tBj-Pb-z5o" firstAttribute="top" secondItem="2DR-Hx-3tV" secondAttribute="bottom" constant="-146" id="1jP-ZJ-IfF"/>
                             <constraint firstItem="ryU-K5-4Yh" firstAttribute="top" secondItem="dh1-3H-91Q" secondAttribute="bottom" constant="48" id="2Rp-Ps-Ngp"/>
                             <constraint firstAttribute="trailing" secondItem="kP9-Uf-6Cx" secondAttribute="trailing" id="8Cd-qK-wKV"/>
                             <constraint firstItem="ZhY-s2-1CA" firstAttribute="top" secondItem="07M-ea-YfK" secondAttribute="top" id="8Yn-lZ-9gr"/>
