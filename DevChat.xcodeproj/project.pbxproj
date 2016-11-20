@@ -19,6 +19,7 @@
 		D835ABA41DDFAC2500E5B85F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835ABA31DDFAC2500E5B85F /* LoginVC.swift */; };
 		D835ABA71DDFAFD500E5B85F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D835ABA61DDFAFD500E5B85F /* AuthService.swift */; };
 		D841513B1DDE8A2800F1FB08 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D841513A1DDE8A2800F1FB08 /* RoundedButton.swift */; };
+		D84A8A201DE16983007E07FC /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84A8A1F1DE16983007E07FC /* DataService.swift */; };
 		D8ED3BAF1DDE3A6C001C2D0F /* RoundTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED3BAE1DDE3A6C001C2D0F /* RoundTextField.swift */; };
 		D8F07FF81DDD8E1000B540F8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8F07FF71DDD8E1000B540F8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		D835ABA31DDFAC2500E5B85F /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		D835ABA61DDFAFD500E5B85F /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D841513A1DDE8A2800F1FB08 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		D84A8A1F1DE16983007E07FC /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		D8ED3BAE1DDE3A6C001C2D0F /* RoundTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundTextField.swift; sourceTree = "<group>"; };
 		D8F07FF61DDD783B00B540F8 /* AAPLCameraVCDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCameraVCDelegate.h; sourceTree = "<group>"; };
 		D8F07FF71DDD8E1000B540F8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				D835ABA61DDFAFD500E5B85F /* AuthService.swift */,
+				D84A8A1F1DE16983007E07FC /* DataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 				D841513B1DDE8A2800F1FB08 /* RoundedButton.swift in Sources */,
 				D8ED3BAF1DDE3A6C001C2D0F /* RoundTextField.swift in Sources */,
 				D82EA3351DD91C3700F07762 /* AVCamPreviewView.m in Sources */,
+				D84A8A201DE16983007E07FC /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

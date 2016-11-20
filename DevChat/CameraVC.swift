@@ -26,11 +26,13 @@ class CameraVC: AVCamCameraViewController, AAPLCameraVCDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        guard FIRAuth.auth()?.currentUser != nil else {
-            //if theres a current user we wont run this code
-            performSegue(withIdentifier: "LoginVC", sender: nil)
-            return
-        }
+        performSegue(withIdentifier: "LoginVC", sender: nil)
+        
+//        guard FIRAuth.auth()?.currentUser != nil else {
+//            //if theres a current user we wont run this code
+//            performSegue(withIdentifier: "LoginVC", sender: nil)
+//            return
+//        }
         
     }
 
