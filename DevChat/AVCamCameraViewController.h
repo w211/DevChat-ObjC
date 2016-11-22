@@ -7,6 +7,8 @@
 */
 
 //TESTING Pull
+//Pulled current data without earsing this data cool
+
 @import UIKit;
 @class AVCamPreviewView;
 @protocol AAPLCameraVCDelegate;
