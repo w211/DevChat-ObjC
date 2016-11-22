@@ -6,6 +6,8 @@
 	View controller for camera interface.
 */
 
+//TESTING Pull
+//Pulled current data without earsing this data cool
 
 @import UIKit;
 @class AVCamPreviewView;
