@@ -16,6 +16,25 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     private var users = [User]()
     private var selectedUsers = Dictionary<String, User>()
     
+    private var _imageData: Data?
+    private var _videoURL: URL?
+    
+    var imageData: Data? {
+        set {
+            _imageData = newValue
+        } get {
+            return _imageData
+        }
+    }
+    
+    var videoURL: URL? {
+        set {
+            _videoURL = newValue
+        } get {
+            return _videoURL
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -74,6 +93,10 @@ class UsersVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return users.count
     }
-   
+    
+
+    @IBAction func sendPRBtnPressed(sender: AnyObject) {
+        
+    }
 
 }

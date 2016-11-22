@@ -47,6 +47,7 @@ class CameraVC: AVCamCameraViewController, AAPLCameraVCDelegate {
         changeCamera()
 
     }
+
     
     func shouldEnableCameraUI(_ enable: Bool) {
         cameraBtn.isEnabled = enable
@@ -68,6 +69,30 @@ class CameraVC: AVCamCameraViewController, AAPLCameraVCDelegate {
         print("Can Start Recording")
         // Doesnt work since the view is in Photo mode
 
+    }
+    
+    func videoRecordingFailed() {
+        
+    }
+    
+    func videoRecordingComplete(_ videoURL: URL!) {
+        performSegue(withIdentifier: "UsersVC", sender: ["videoURL":videoURL])
+    }
+    
+    func snapshotFailed() {
+        
+    }
+    
+    func snapshotTaken(_ snapshotData: Data!) {
+        performSegue(withIdentifier: "UsersVC", sender: ["snapshotData":snapshotData])
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let usersVC = segue.destination as? UsersVC {
+            if let videoDict = sender as? Dictionary<String, URL> {
+                let url = videoDict["videoURL"]
+            }
+        }
     }
 
 }

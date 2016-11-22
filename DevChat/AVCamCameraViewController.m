@@ -794,9 +794,19 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 	if ( error ) {
 		NSLog( @"Movie file finishing error: %@", error );
 		success = [error.userInfo[AVErrorRecordingSuccessfullyFinishedKey] boolValue];
+        [self.delegate videoRecordingFailed];
 	}
 	if ( success ) {
-		// Check authorization status.
+        
+        [self.delegate videoRecordingComplete:outputFileURL];
+        
+        /*
+        // This portion of the code saves the video once it's done recording to the device
+        // We dont need this since we're saving it to the server
+		
+         
+         
+        // Check authorization status.
 		[PHPhotoLibrary requestAuthorization:^( PHAuthorizationStatus status ) {
 			if ( status == PHAuthorizationStatusAuthorized ) {
 				// Save the movie file to the photo library and cleanup.
@@ -816,10 +826,14 @@ typedef NS_ENUM( NSInteger, AVCamLivePhotoMode ) {
 				cleanup();
 			}
 		}];
+         */
 	}
 	else {
+        [self.delegate videoRecordingFailed];
 		cleanup();
 	}
+         
+         
 	
 	// Enable the Camera and Record buttons to let the user switch camera and start another recording.
 	dispatch_async( dispatch_get_main_queue(), ^{
