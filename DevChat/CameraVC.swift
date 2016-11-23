@@ -13,6 +13,7 @@ import AVFoundation
 class CameraVC: AVCamCameraViewController, AAPLCameraVCDelegate {
 
     @IBOutlet weak var camPreviewView: AVCamPreviewView!
+    @IBOutlet weak var videoPreviewView: AVCaptureVideoPreviewLayer!
     @IBOutlet weak var cameraBtn: UIButton!
     @IBOutlet weak var recordBtn: UIButton!
     
@@ -21,18 +22,20 @@ class CameraVC: AVCamCameraViewController, AAPLCameraVCDelegate {
         delegate = self
         self.previewView = camPreviewView
         
+        
         super.viewDidLoad()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        performSegue(withIdentifier: "LoginVC", sender: nil)
+        //performSegue(withIdentifier: "LoginVC", sender: nil)
         
-//        guard FIRAuth.auth()?.currentUser != nil else {
-//            //if theres a current user we wont run this code
-//            performSegue(withIdentifier: "LoginVC", sender: nil)
-//            return
-//        }
+        guard FIRAuth.auth()?.currentUser != nil else {
+            //if theres a current user we wont run this code
+            performSegue(withIdentifier: "LoginVC", sender: nil)
+            return
+        }
         
     }
 
@@ -91,6 +94,10 @@ class CameraVC: AVCamCameraViewController, AAPLCameraVCDelegate {
         if let usersVC = segue.destination as? UsersVC {
             if let videoDict = sender as? Dictionary<String, URL> {
                 let url = videoDict["videoURL"]
+                usersVC.videoURL = url
+            } else if let snapDict = sender as? Dictionary<String, Data> {
+                let snapData = snapDict["snapshotData"]
+                usersVC.snapData = snapData
             }
         }
     }
