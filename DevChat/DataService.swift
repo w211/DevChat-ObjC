@@ -42,6 +42,14 @@ class DataService {
         mainRef.child("users").child(uid).child("profile").setValue(profile)
     }
 
+    func sendMediaPullRequest(senderUID: String, sendingTo:Dictionary<String, User>, mediaURL: URL, textSnippet: String? = nil) {
+        
+        var pr: Dictionary<String, AnyObject> = ["mediaUrl":mediaURL.absoluteString as AnyObject, "userID":senderUID as AnyObject, "openCount": 0 as AnyObject, "usersSentTo": sendingTo.keys as AnyObject]
+        
+        mainRef.child("pullRequests").childByAutoId().setValue(pr)
+        
+    }
+    
 }
 
 
